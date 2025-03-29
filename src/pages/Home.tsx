@@ -6,7 +6,7 @@ const Home = () => {
         <div className="hero-content">
           <h1>Welcome to ShopMate</h1>
           <p>Your one-stop shop for the latest trends and exclusive offers.</p>
-          <Link to='/products'></Link>
+          <Link to='/products'>Shop now</Link>
         </div>
       </section>
 
