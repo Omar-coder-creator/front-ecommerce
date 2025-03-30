@@ -323,6 +323,10 @@ nav img {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+.sidebar-item{
+    font-size:larger;
+    cursor:pointer;
+}
 .remove-btn{
     background-color:#ff6347 ;
 }
@@ -344,4 +348,17 @@ nav img {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+#admin-page{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+#admin-form{
+   max-width: none;
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   gap: 5px;
 }

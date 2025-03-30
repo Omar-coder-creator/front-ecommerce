@@ -14,7 +14,7 @@ const ProductForm = ({ products, setProducts }: { products: ProductType[] | unde
 
     const handleAddProduct = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (! name.current || !price.current || !category.current) return setError('missing required values')
+        if (!name.current || !price.current || !category.current) return setError('missing required values')
         const product: ProductType = {
             name: name.current.value,
             price: Number(price.current?.value),
@@ -24,16 +24,18 @@ const ProductForm = ({ products, setProducts }: { products: ProductType[] | unde
             stock: 1
 
         }
-        console.log(imageUrl.current?.value)
+        console.log(product)
         const data = await createProduct(product)
         if (!products) return
         setProducts([...products, data])
     }
 
     return (
-        <form action="">
-            <input type="text" placeholder="name" ref={name} />
-            <input type="number" placeholder="price" ref={price} />
+        <form action="" id="admin-form">
+            <div>
+                <input type="text" placeholder="name" ref={name} />
+                <input type="number" placeholder="price" ref={price} />
+            </div>
             <textarea name="" id="" placeholder="description" ref={description}></textarea>
             <input type="text" placeholder="imageUrl" ref={imageUrl} />
             <select name="" id="" ref={category}>

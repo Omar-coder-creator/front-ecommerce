@@ -14,24 +14,25 @@ const AdminProducts = () => {
     }, [])
 
     const handleDelete = async (id: string | undefined) => {
-        if (!id) return 
+        if (!id) return
         await deleteProduct(id)
         setProducts(products?.filter((product: ProductType) => product._id !== id))
     }
     return (
-        <div id="admin-products">
-
-            {
-                products?.map((product: ProductType) => (
-                    <div className="admin-product" key={product._id}>
-                        <div className="image-container">
-                            <img src={product.imageUrl} alt="Product Image" />
-                            <span className="category">{product.category}</span>
+        <div id="admin-page">
+            <div id="admin-products">
+                {
+                    products?.map((product: ProductType) => (
+                        <div className="admin-product" key={product._id}>
+                            <div className="image-container">
+                                <img src={product.imageUrl} alt="Product Image" />
+                                <span className="category">{product.category}</span>
+                            </div>
+                            <button className="delete-product" onClick={() => handleDelete(product._id)}>Delete Product</button>
                         </div>
-                        <button className="delete-product" onClick={() => handleDelete(product._id)}>Delete Product</button>
-                    </div>
-                ))
-            }
+                    ))
+                }
+            </div>
             <ProductForm products={products} setProducts={setProducts} />
         </div>
 
