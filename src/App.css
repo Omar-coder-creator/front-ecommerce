@@ -355,10 +355,40 @@ nav img {
     gap: 10px;
     
 }
-#admin-form{
-   max-width: none;
-   display: flex;
-   width: 100%;
-   flex-direction: column;
-   gap: 5px;
+
+#admin-sidebar a {
+    text-decoration: none;
+    font-size: larger;
+    color: #333;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+#admin-users {
+    
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#admin-users th, #admin-users td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#admin-users th {
+    background: #ff7b00;
+    color: white;
+    font-weight: bold;
+}
+
+#admin-users tr:hover {
+    background: #f1f1f1;
+}
+
+#admin-users td {
+    color: #333;
 }

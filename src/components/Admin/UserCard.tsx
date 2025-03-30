@@ -1,21 +1,15 @@
 import { UserType } from '../../types/userTypes'
 import { CartType } from '../../types/cartTypes'
 
-const UserCard = ({user,cart}:{user:UserType , cart : CartType | undefined}) => {
+const UserCard = ({ user, cart }: { user: UserType, cart: CartType | undefined }) => {
   return (
-    <div className='user-card'>
-        <div className="userinfo">
-            <div className="user-details">
-                <p>{user.name}</p>
-                <p>{user.email}</p>
-                <p>role : {user.isAdmin ? 'Admin' : 'User'}</p>
-            </div>
-        </div>
-        <div className="user-cart">
-            <p>items number : {cart ?cart.items.length : 'no data'}</p>
-            <p>total : {cart ? cart.total: 'no data'}</p>
-        </div>
-    </div>
+    <tr className='user-row'>
+      <td>{user.name}</td>
+      <td>{user.email}</td>
+      <td>{user.isAdmin ? 'Admin' : 'User'}</td>
+      <td>{cart ? cart.items.length : 'no data'}</td>
+      <td>{cart ? cart.total : 'no data'}</td>
+    </tr>
   )
 }
 
